@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара Shopify</title>
+    <!-- Подключение Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        /* Анимация при наведении на изображение */
+        .card-image-container:hover .card-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <!-- Основной контейнер карточки. Максимальная ширина 320px для стандартного Shopify-сайта. -->
+    <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
+        
+        <!-- Контейнер для изображения с эффектом приближения при наведении -->
+        <div class="relative w-full aspect-square overflow-hidden card-image-container">
+            <!--
+                Изображение товара.
+                Используйте изображение 1024x1024 или 2048x2048 пикселей.
+                Атрибут alt важен для SEO.
+            -->
+            <img class="w-full h-full object-cover transition-transform duration-300 card-image" 
+                 src="img/Untitled.png" 
+                 alt="Изображение товара (1024x1024)">
+            
+            <!-- Лейбл "Новинка" -->
+            <div class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                New
+            </div>
+        </div>
+
+        <!-- Контейнер для текста и деталей -->
+        <div class="p-6 text-center">
+            <!-- Название товара -->
+            <h3 class="font-bold text-xl text-gray-800 mb-2 truncate">
+                Realme Buds 
+            </h3>
+            
+            <!-- Описание товара. Текст будет ограничен двумя строками. -->
+            <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+              Realme Buds - your bright sound and maximum freedom. Enjoy powerful bass and long runtime in a stylish two-color design.
+            </p>
+            
+            <!-- Цена и кнопка -->
+            <div class="flex items-center justify-between mt-4">
+                <!-- Цена -->
+                <span class="font-bold text-2xl text-gray-900">
+                    56.99 €
+                </span>
+                
+                <!-- Кнопка "Добавить в корзину" -->
+                <button class="bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
+                    Buy
+                </button>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
